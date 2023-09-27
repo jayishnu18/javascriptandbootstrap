@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <table>
+        <tr>
+            <td>Enter your numbers </td>
+        </tr>
+        <tr>
+            <td>
+                <label> Number 1</label>
+
+            </td>
+            <td><input id="no1" type="number" placeholder="num one"></td>
+        </tr>
+        <tr>
+            <td>
+                <label> Number 2</label>
+
+            </td>
+            <td><input id="no2" type="number" placeholder="num one"></td>
+        </tr>
+        <tr>
+            <td>
+               <button onclick=mul()>Multiply</button>
+            </td>
+            <td>
+                <button onclick=div()>divide</button>
+             </td>
+        </tr>
+        <tr>
+            <td id="answer"></td>
+        </tr>
+     </table>
+     <script>
+        function mul(a,b){
+            var a=document.getElementById("no1").value;
+            var b=document.getElementById("no2").value;
+            document.getElementById("answer").innerHTML=a*b;
+
+        }
+        function div(a,b){
+            var a=document.getElementById("no1").value;
+            var b=document.getElementById("no2").value;
+            document.getElementById("answer").innerHTML=a/b;
+
+        }
+
+     </script>
+</body>
+</html>

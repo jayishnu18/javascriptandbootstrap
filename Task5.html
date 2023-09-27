@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validate()">
+        <div>
+        <label for="">Name</label>
+        <input id="name" type="text">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input id="email" type="email">
+            <p id="e1"></p>
+         </div>
+
+      <div>
+                <label for="">website</label>
+                <input id="website" type="text">
+       </div>
+
+        <div>
+                    <textarea>Enter your Description</textarea>
+                    
+        </div>
+        <div>
+            <input type="submit" value="here">
+        </div>
+    </form>
+    <script>
+       function validate(){
+        name=document.getElementById("name")
+       }
+    </script>
+</body>
+</html>

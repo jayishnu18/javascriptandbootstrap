@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort String</title>
+</head>
+<body>
+    <label>Enter a string</label>
+    <input type="text" id="inputString" placeholder="String">
+    <button onclick="sortString()">Sort</button>
+    <div id="outputString"></div>
+    <script>
+        function sortString() {
+            var input = document.getElementById("inputString").value;
+            
+            // Convert the input string to an array of characters
+            var charArray = input.split('');
+
+            // Implement a simple bubble sort
+            for (var i = 0; i < charArray.length - 1; i++) {
+                for (var j = 0; j < charArray.length - i - 1; j++) {
+                    if (charArray[j] > charArray[j + 1]) {
+                        // Swap characters if they are out of order
+                        var temp = charArray[j];
+                        charArray[j] = charArray[j + 1];
+                        charArray[j + 1] = temp;
+                    }
+                }
+            }
+
+            // Join the sorted array of characters back into a string
+            var sorted = charArray.join('');
+
+            document.getElementById("outputString").innerHTML = "Sorted String: " + sorted;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter a number</label>
+    <input id="ho"  type="number" placeholder="enter a number">
+    <button onclick = "hi()">Submit</button>
+   <div id="hej">
+       hi
+   </div>
+   <script> 
+     function hi(){
+     var a = document.getElementById("ho").value;
+     var b,sum=0;
+     var z = a;
+     while(a>0)
+       {
+          b = a % 10;
+          sum = sum*10 + b;
+          a = parseInt(a / 10);
+       }
+document.getElementById("hej").innerHTML=(sum)
+  console.log(sum)
+    }
+</script>
+   
+
+</body>
+</html>

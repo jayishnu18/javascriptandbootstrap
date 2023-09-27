@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick=hi()>Get Date</button>
+    <button onclick=he()>Get Time</button>
+    <div id="hehe"></div>
+</body>
+<script>
+    function hi()
+    {
+       const date= new Date();
+       months=["january","february","march","april","may","june","july","august","september","october","november","december"]
+       document.getElementById("hehe").innerHTML= date.getDate()+" "+ months[date.getMonth()]+" "+date.getFullYear();
+       
+    }
+    function he()
+    {
+        const d = new Date();
+        d.setDate(27);
+        document.getElementById("hehe").innerHTML = d;
+    }
+</script>
+</html>
