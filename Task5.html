@@ -3,37 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Validation</title>
 </head>
 <body>
     <form onsubmit="return validate()">
         <div>
-        <label for="">Name</label>
-        <input id="name" type="text">
-        </div>
-        <div>
-            <label for="">Email</label>
-            <input id="email" type="email">
+            <label for="name">Name</label>
+            <input id="name" type="text" onblur="valname()">
             <p id="e1"></p>
-         </div>
-
-      <div>
-                <label for="">website</label>
-                <input id="website" type="text">
-       </div>
-
-        <div>
-                    <textarea>Enter your Description</textarea>
-                    
         </div>
         <div>
-            <input type="submit" value="here">
+            <label for="email">Email</label>
+            <input id="email" type="email" onblur="valemail()">
+            <p id="e2"></p>
+        </div>
+        <div>
+            <label for="website">Website</label>
+            <input id="website" type="text" onblur="valweb()">
+            <p id="e3"></p>
+        </div>
+        <div>
+            <p>Enter your Description</p> 
+            <textarea id="des" onblur="valdes()">Description</textarea>
+            <p id="e4"></p>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
         </div>
     </form>
     <script>
-       function validate(){
-        name=document.getElementById("name")
-       }
+        function validate() {
+            let a = valname();
+            let b = valemail();
+            let c = valweb();
+            let d = valdes();
+            if (a && b && c && d) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function valname() {
+            var name = document.getElementById("name").value;
+            if (!name || name.match(/^\d/)) {
+                document.getElementById("e1").innerHTML = "Enter correct name"; 
+                return false;
+            } else {
+                document.getElementById("e1").innerHTML = "";
+                document.getElementById("name").style.backgroundColor = "green";
+                return true;
+            }
+        }
+
+        function valemail() {
+            var email = document.getElementById("email").value;
+            if (email.includes('@')) {
+                document.getElementById("e2").innerHTML = "";
+                document.getElementById("email").style.backgroundColor = "green";
+                return true;
+            } else {
+                document.getElementById("e2").innerHTML = "Enter correct email";
+                return false;
+            }
+        }
+
+        function valweb() {
+            var website = document.getElementById("website").value;
+            if (website.trim() === "" || website.match(/\d/))
+             {
+                document.getElementById("e3").innerHTML = "Enter web";
+                return false;
+            } else {
+                document.getElementById("website").style.backgroundColor = "green";
+                return true;
+            }
+        }
+
+        function valdes() {
+            var description = document.getElementById("des").value;
+            if (description.trim() === "" || description === "Description") {
+                document.getElementById("e4").innerHTML = "Enter correct description";
+                return false;
+            } else {
+                document.getElementById("des").style.backgroundColor = "green";
+                return true;
+            }
+        }
     </script>
 </body>
 </html>
